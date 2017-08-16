@@ -1,13 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class CadastroController extends Controller
+class SearchController extends Controller
 {
     public function index(){
-        return view('cadastro.index');
+        return view('search.index');
     }
 }

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('layouts.welcome');
 });
 
-Route::get('posts','PostController@index');
+Route::get('register','RegisterController@index');
 
-Route::get('cadastro','CadastroController@index');
+Route::get('search','SearchController@index');
+
+Route::get('grades','GradesController@index');
