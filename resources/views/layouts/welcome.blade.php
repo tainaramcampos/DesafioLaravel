@@ -14,9 +14,10 @@
     </head>
     <body>
         <ul class="nav nav-tabs">
-        <li><a href='#'>Cadastrar</a></li>
+        <li><a href='{!! url('/cadastro'); !!}'>Cadastrar</a></li>
         <li><a href="#">Busca de Alunos</a></li>
         <li><a href="#">Notas</a></li>
         </ul>
+        @yield('content');
     </body>
 </html>
