@@ -8,16 +8,21 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="css/customstyle.css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     </head>
     <body>
+
+    <div class="container container-fluid">
         <ul class="nav nav-tabs">
-        <li><a href='{!! url('/register'); !!}'>Cadastrar</a></li>
-        <li><a href='{!! url('/search'); !!}'>Busca de Alunos</a></li>
-        <li><a href='{!! url('/grades'); !!}'>Notas</a></li>
+            <li><a href='{!! url('/register'); !!}'>Cadastrar</a></li>
+            <li><a href='{!! url('/search'); !!}'>Busca de Alunos</a></li>
+            <li><a href='{!! url('/grades'); !!}'>Notas</a></li>
         </ul>
-        @yield('content');
+        <br>
+        @yield('content')
+    </div>
     </body>
 </html>
