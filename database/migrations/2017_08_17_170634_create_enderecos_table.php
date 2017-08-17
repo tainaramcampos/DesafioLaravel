@@ -14,7 +14,7 @@ class CreateEnderecosTable extends Migration
     public function up()
     {
         Schema::create('endereco', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primary();
             $table->timestamps();
             $table->string('logradouro',255);
             $table->string('numero',45);
