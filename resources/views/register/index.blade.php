@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <form class="form-horizontal" action="/action_page.php">
+        <form class="form-horizontal" action="{{action('RegisterController@save')}}">
 
             <div class="form-group col-xs-8">
                 <label for="usr" class="control-label col-sm-2" >Nome</label>
