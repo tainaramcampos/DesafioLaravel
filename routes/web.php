@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 Route::get('register','RegisterController@index');
 
-Route::get('search','SearchController@index');
+Route::get('student','SearchController@index');
 
 Route::get('grades','GradesController@index');
 
-
-
 Route::post('register', 'RegisterController@save');
+
+Route::get('grades','GradesController@index');
+
+Route::get('search','SearchController@find');

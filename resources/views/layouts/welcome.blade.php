@@ -18,11 +18,13 @@
     <div class="container container-fluid">
         <ul class="nav nav-tabs">
             <li><a href='{!! url('/register'); !!}'>Cadastrar</a></li>
-            <li><a href='{!! url('/search'); !!}'>Busca de Alunos</a></li>
+            <li><a href='{!! url('/student'); !!}'>Busca de Alunos</a></li>
             <li><a href='{!! url('/grades'); !!}'>Notas</a></li>
         </ul>
         <br>
-        @yield('content')
+    </div>
+    <div class="container">
+    @yield('content')
     </div>
     </body>
 </html>
