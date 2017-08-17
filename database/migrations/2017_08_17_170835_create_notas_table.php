@@ -18,7 +18,10 @@ class CreateNotasTable extends Migration
             $table->timestamps();
             $table->double('valor');
             $table->integer('aluno_id')->unsigned();
-          //  $table->foreign('aluno_id')->references('id')->on('aluno')->onDelete('cascade');
+        });
+
+        Schema::table('nota', function (Blueprint $table) {
+            $table->foreign('aluno_id')->reference('id')->on('aluno');
         });
     }
 
@@ -29,6 +32,10 @@ class CreateNotasTable extends Migration
      */
     public function down()
     {
+        Schema::table('note', function($table) {
+            $table->dropColumn('aluno_id');
+        });
+
         Schema::dropIfExists('nota');
     }
 }

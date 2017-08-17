@@ -14,15 +14,19 @@ class CreateAlunosTable extends Migration
     public function up()
     {
         Schema::create('aluno', function (Blueprint $table) {
-            $table->increments('id')->index();
+            $table->increments('id');
             $table->timestamps();
             $table->string('nome',255);
             $table->string('matricula', 10);
-            $table->string('cpf',11)->index();
+            $table->string('cpf',11);
             $table->integer('endereco_id' )->unsigned();
-           // $table->foreign('endereço_id', 'fk_aluno_endereco_idx')->references('id')->on('endereco')->onDelete('cascade')->index();
+            });
+
+        Schema::table('aluno', function (Blueprint $table) {
+            $table->foreign('endereco_id')->references('id')->on('endereco');
         });
-    }
+
+        }
 
     /**
      * Reverse the migrations.
@@ -31,6 +35,10 @@ class CreateAlunosTable extends Migration
      */
     public function down()
     {
+        Schema::table('aluno', function($table) {
+            $table->dropColumn('endereco_id');
+        });
+
         Schema::dropIfExists('aluno');
     }
 }
