@@ -18,8 +18,22 @@ class SearchController extends Controller
     public function find()
     {
         $category = Input::get('dadodebusca');
+        $tipo = Input::get('tipodebusca');
 
-        $aluno = Aluno::where('nome', '=', $category)->get()->first();
+        switch ($tipo){
+            case 'CPF':
+                $aluno = Aluno::where('cpf', '=', $category)->get()->first();
+                break;
+
+            case 'Nome':
+                $aluno = Aluno::where('nome', '=', $category)->get()->first();
+                break;
+
+            case 'Matrícula':
+                $aluno = Aluno::where('matricula', '=', $category)->get()->first();
+                break;
+        }
+
         if (count($aluno)) {
             $endereco = Endereco::where('id', '=', $aluno->endereco_id)->get()->first();
             $nota = Nota::where('aluno_id', '=', $aluno->id)->get()->first();
@@ -27,6 +41,8 @@ class SearchController extends Controller
         } else {
             return "User Not Found!";
         }
+
+
     }
 }
 

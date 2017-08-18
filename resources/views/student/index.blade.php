@@ -3,33 +3,36 @@
 @section('content')
 
     <script>
-        $(function(){
 
-            $(".dropdown-menu").on('click', 'li a', function(){
-                $(".btn:first-child").text($(this).text() ) ;
-                $(".btn:first-child").val($(this).text());
+        $(document).ready(function () {
+            $("#supplier").change(function () {
+                var selectedText2 =  $("#supplier option:selected").text();
+                $('[name="tipodebusca"]').val(selectedText2);
             });
-
         });
+
     </script>
 
         <form class="form-inline" method="get" action="{{action('SearchController@find')}}">
+
+            <div class="col-md-4">
             <div class="form-group">
             <input type="text" class="form-control" name="dadodebusca" required>
             </div>
             <div class="form-group">
-            <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">CPF
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li value="cpf"><a href="#">CPF</a></li>
-                        <li value="nome"><a href="#">Nome</a></li>
-                        <li value="matricula"><a href="#">Matrícula</a></li>
-                    </ul>
-                </div>
+                <select name="supplier" id="supplier" style="text-transform:uppercase;">
+                    <option value="">CPF</option>
+                    <option value="1">Nome</option>
+                    <option value="2">Matrícula</option>
+                </select>
+                </br>
+                <input name="tipodebusca" id="textvalue" value="CPF" hidden  readonly>
             </div>
+            </div>
+
+
+            <div class="container col-md-4">
             <button type="submit" class="btn btn-default">Buscar</button>
-            </div>
             </div>
         </form>
         <div class="content">
