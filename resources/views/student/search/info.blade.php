@@ -9,11 +9,12 @@
 </style>
 
     <div class="container">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="get" action="{{action('RegisterController@edit')}}">
 
             <div class="form-group col-xs-8">
                 <label for="usr" class="control-label col-sm-2" >Nome</label>
                 <div class="col-sm-10">
+                    <input type="text" name="id" value="{{$aluno->id}}" hidden>
                     <input type="text" class="form-control" id="usr" value="{{$aluno->nome}}" disabled>
                 </div>
             </div>
@@ -62,13 +63,11 @@
 
             <div class="form-group">
             <div class="col-sm-offset-8 col-sm-10">
-                <button type="submit" class="btn btn-default">Editar</button> <!--Os valores mostrados serão informações do aluno buscado.
-                                                                                      Clicar em editar vai habilitar os campos e
-                                                                                      mudar o valor do botão "editar" para "Salvar"-->
-                <button type="submit" class="btn btn-default">Excluir</button>
+                <button type="submit" class="btn btn-default">Editar</button>
+                <button class="btn btn-default" name="excluir">Excluir</button>
             </div>
         </form>
-        </form>
+
     </div>
 
 

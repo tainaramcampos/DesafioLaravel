@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Input;
 use App\Endereco;
 use App\Nota;
 use Illuminate\Routing\Controller;
@@ -40,6 +41,36 @@ class RegisterController extends Controller
         $nota->aluno_id = $nota2->aluno_id = $aluno->id;
         $nota->save();
         $nota2->save();
+
+        return Redirect::back();
+    }
+
+    public function edit(){
+        $id = Input::get('id');
+        $aluno = Aluno::where('id', '=', $id)->get()->first();
+        $endereco = Endereco::where('id', '=', $id)->get()->first();
+        $nota = Nota::where('id', '=', $id)->get()->first();
+        
+        return view('student.edit.index')->with('aluno', $aluno)->with('endereco',$endereco)->with('nota',$nota);
+    }
+
+    public function update(Request $request){
+        $aluno = Aluno::find($request->id);
+        $endereco = Endereco::where('id', '=', $aluno->endereco_id)->get()->first();
+        $nota = Nota::where('aluno_id', '=', $request->id)->get()->first();
+
+        $endereco->logradouro = $request->logradouro;
+        $endereco->numero = $request->numero;
+        $endereco->bairro = $request->bairro;
+        $endereco->save();
+
+        $aluno->nome = $request->nome;
+        $aluno->cpf = $request->cpf;
+        $aluno->matricula = $request->matricula;
+        $aluno->save();
+
+        $nota->valor = $request->valor1;
+        $nota->save();
 
         return Redirect::back();
     }

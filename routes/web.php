@@ -26,3 +26,7 @@ Route::post('register', 'RegisterController@save');
 Route::get('grades','GradesController@index');
 
 Route::get('search', ['as' => 'search', 'uses' => 'SearchController@find']);
+
+Route::get('edit', ['as' => 'edit', 'uses' => 'RegisterController@edit']);
+
+Route::post('update', 'RegisterController@update');

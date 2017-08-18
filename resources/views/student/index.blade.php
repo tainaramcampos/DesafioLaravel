@@ -26,7 +26,7 @@
                     <option value="2">Matrícula</option>
                 </select>
                 </br>
-                <input name="tipodebusca" id="textvalue" value="CPF" hidden  readonly>
+                <input name="tipodebusca" id="textvalue" value="CPF" hidden readonly>
             </div>
             </div>
 
