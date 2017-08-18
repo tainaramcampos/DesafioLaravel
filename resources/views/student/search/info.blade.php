@@ -14,7 +14,7 @@
             <div class="form-group col-xs-8">
                 <label for="usr" class="control-label col-sm-2" >Nome</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="usr" value="Nome" disabled>
+                    <input type="text" class="form-control" id="usr" value="{{$aluno->nome}}" disabled>
                 </div>
             </div>
 

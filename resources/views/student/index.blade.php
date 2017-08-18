@@ -13,7 +13,7 @@
         });
     </script>
 
-        <form class="form-inline" method="get" action="">
+        <form class="form-inline" method="get" action="{{action('SearchController@find')}}">
             <div class="form-group">
             <input type="text" class="form-control" name="dadodebusca" required>
             </div>

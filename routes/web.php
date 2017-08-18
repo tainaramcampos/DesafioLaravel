@@ -25,4 +25,4 @@ Route::post('register', 'RegisterController@save');
 
 Route::get('grades','GradesController@index');
 
-Route::get('search','SearchController@find');
+Route::get('search', ['as' => 'search', 'uses' => 'SearchController@find']);
