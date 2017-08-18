@@ -16,7 +16,7 @@ class CreateNotasTable extends Migration
         Schema::create('nota', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->double('valor');
+            $table->double('va  lor');
             $table->integer('aluno_id')->unsigned();
         });
 
@@ -32,7 +32,7 @@ class CreateNotasTable extends Migration
      */
     public function down()
     {
-        Schema::table('note', function($table) {
+        Schema::table('nota', function($table) {
             $table->dropColumn('aluno_id');
         });
 

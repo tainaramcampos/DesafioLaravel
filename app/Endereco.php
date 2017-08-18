@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Endereco extends Model
 {
-    protected $fillable = ['logradouro','numero','bairro'];
-    protected $guarded = ['id', 'created_at', 'update_at'];
+    protected $fillable = ['id','logradouro','numero','bairro'];
+    protected $guarded = [ 'created_at', 'update_at'];
     protected $table = 'endereco';
 }
