@@ -64,7 +64,7 @@
             <div class="form-group">
             <div class="col-sm-offset-8 col-sm-10">
                 <button type="submit" class="btn btn-default">Editar</button>
-                <button class="btn btn-default" name="excluir">Excluir</button>
+                <input type="submit" class="btn btn-default" name="excluir" value="excluir"/>
             </div>
         </form>
 

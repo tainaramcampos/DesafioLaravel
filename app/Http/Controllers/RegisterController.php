@@ -47,11 +47,24 @@ class RegisterController extends Controller
 
     public function edit(){
         $id = Input::get('id');
-        $aluno = Aluno::where('id', '=', $id)->get()->first();
-        $endereco = Endereco::where('id', '=', $id)->get()->first();
-        $nota = Nota::where('id', '=', $id)->get()->first();
-        
-        return view('student.edit.index')->with('aluno', $aluno)->with('endereco',$endereco)->with('nota',$nota);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+            if (isset($_GET['excluir'])) {
+              Aluno::destroy($id);
+              return "Registro excluído";
+            }
+            else {
+                $aluno = Aluno::where('id', '=', $id)->get()->first();
+                $endereco = Endereco::where('id', '=', $id)->get()->first();
+                $nota = Nota::where('id', '=', $id)->get()->first();
+
+                return view('student.edit.index')->with('aluno', $aluno)->with('endereco',$endereco)->with('nota',$nota);
+
+            }
+        }
+
+
     }
 
     public function update(Request $request){
