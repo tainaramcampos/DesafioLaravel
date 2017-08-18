@@ -7,7 +7,7 @@ use App\Endereco;
 use App\Nota;
 use Illuminate\Routing\Controller;
 use App\Aluno;
-use App\Endereço;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisterController extends Controller
 {
@@ -41,6 +41,6 @@ class RegisterController extends Controller
         $nota->save();
         $nota2->save();
 
-        return view('register.index')->with('message', 'Aluno Registrado');
+        return Redirect::back();
     }
 }

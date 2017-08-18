@@ -16,7 +16,7 @@ class CreateNotasTable extends Migration
         Schema::create('nota', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->double('va  lor');
+            $table->double('valor');
             $table->integer('aluno_id')->unsigned();
         });
 

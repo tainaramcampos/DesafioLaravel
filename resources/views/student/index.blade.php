@@ -13,18 +13,18 @@
         });
     </script>
 
-        <form class="form-inline" action="{{action('SearchController@find')}}">
+        <form class="form-inline" method="get" action="">
             <div class="form-group">
-            <input type="text" class="form-control" required>
+            <input type="text" class="form-control" name="dadodebusca" required>
             </div>
             <div class="form-group">
             <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">CPF
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">CPF</a></li>
-                        <li><a href="#">Nome</a></li>
-                        <li><a href="#">Matrícula</a></li>
+                        <li value="cpf"><a href="#">CPF</a></li>
+                        <li value="nome"><a href="#">Nome</a></li>
+                        <li value="matricula"><a href="#">Matrícula</a></li>
                     </ul>
                 </div>
             </div>
